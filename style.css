@@ -18,7 +18,7 @@
   html,
   body {
     /* hide both x and y overflow */
-    overflow: hidden;
+    overflow-x: hidden;
   }
 }
 
