@@ -560,6 +560,30 @@ nav ul li a {
   }
 }
 
+/* 1) hide the mobile copy by default */
+.mobile-only {
+  display: none;
+}
+
+/* 2) show desktop copy by default */
+.desktop-only {
+  display: block;
+}
+
+/* 3) at small screens, swap them */
+@media (max-width: 800px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+    text-align: center; /* if you want it centered in the flow */
+  }
+  .mobile-only .bottom-logo {
+    padding-bottom: 2rem;
+  }
+}
+
 /* section-three */
 
 .sec-three {
@@ -818,6 +842,32 @@ nav ul li a {
   }
   .sec-four-list-item {
     text-align: left;
+  }
+}
+
+/* hide mobile copy by default, show desktop */
+.mobile-only.report-copy {
+  display: none;
+}
+.desktop-only {
+  display: block;
+}
+
+/* at small screens: swap them */
+@media (max-width: 800px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only.report-copy {
+    display: block;
+    text-align: center; /* center it in the flow */
+    margin: 1.5rem 0;
+  }
+
+  /* make sure the sizing matches your other mobile rules */
+  .mobile-only.report-copy .data-report {
+    max-width: 80%;
+    width: auto;
   }
 }
 
@@ -1153,9 +1203,13 @@ nav ul li a {
 @media (max-width: 600px) {
   .ftr-flex {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
+  }
+  .ftr-tagline {
+    margin: 0rem;
   }
   .ftr-col {
     min-width: auto;
+    flex: 1 1 38px;
   }
 }
